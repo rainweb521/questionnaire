@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+/*此样式在窗口小于1280px的时候生效*/
+@media screen and (max-width: 640px) {
+.maincont{
+	width:100%;
+	}
+}
+
+
+
+
+
+
+

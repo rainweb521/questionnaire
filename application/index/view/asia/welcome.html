@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://password.rain1024.com/index.php/index/login/index -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Author" contect="http://www.webqin.net">
+    <title>大数据中心安全考试</title>
+    <link rel="shortcut icon" href="http://password.rain1024.com/index.php/index/login/images/favicon.ico">
+    
+    <!-- Bootstrap -->
+    <link href="/public/asia/login/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/asia/login/style.css" rel="stylesheet">
+    <link href="/public/asia/login/response.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="maincont">
+<br><br>
+     <div class="head-top">
+         <h1 align="center">大数据中心安全考试</h1>
+     </div><!--head-top/-->
+     <form action="/index.php/index/asia/index" method="post" class="reg-login" onsubmit="return valition()">
+         <input type="hidden" name="tip" value="1">
+      <!--<h3>没有账号了？点此<a class="orange" href="#">注册</a></h3>-->
+         <label style="color: #00FF00" id="state"></label>
+      <div class="lrBox">
+       <!--<div class="lrList"><input type="text" placeholder="输入邮箱" id="email"></div>-->
+       <div class="lrList2"><input type="text" required placeholder="请输入姓名" id="name" name="name"> <button type="button" >姓名</button></div>
+       <div class="lrList2"><input type="text" required placeholder="请输入电话" id="phone" name="phone"> <button type="button" >电话</button></div>
+       <div class="lrList2">
+           <select name="bumen" id="bumen">
+               <option value="">请选择公司</option>
+               <option value="移动">北京移动</option>
+               <option value="亚信">合作伙伴</option>
+           </select>
+           <button type="button" >公司</button></div>
+      </div><!--lrBox/-->
+      <div class="lrSub">
+       <input type="submit"  value="开始答题">
+      </div>
+     </form><!--reg-login/-->
+     <div class="height1"></div>
+
+    </div><!--maincont-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <script src="/public/asia/login/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/public/asia/login/bootstrap.min.js"></script>
+    <script src="/public/asia/login/style.js"></script>
+  <script>
+      function valition(){
+          var str = document.getElementById('name').value;
+          var pattern = /^[A-Za-z\u4e00-\u9fa5]+$/gi;
+          if (!pattern.test(str)){
+              alert("姓名输入有误，请重填");
+              return false;
+          }
+          var phone = document.getElementById('phone').value;
+          if(!(/^1(3|4|5|7|8|9)\d{9}$/.test(phone))){
+              alert("手机号码有误，请重填");
+              return false;
+          }
+
+          var selectObj = document.getElementById("bumen");
+
+          var activeIndex = selectObj.options[selectObj.selectedIndex].value;
+          if (activeIndex == ""){
+              alert ("请选择您的公司！");
+              selectObj.focus();
+              return false;
+          }
+      }
+  </script>
+
+</body></html>
